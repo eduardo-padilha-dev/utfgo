@@ -7,6 +7,14 @@ caronas a passageiros que precisam ir ao campus ou retornar dele.
 
 - Eduardo Padilha do Nascimento
 
+## Documentação
+
+- [Requisitos do produto (PRD)](docs/prd.md)
+- [Jornadas de usuário](docs/user-flows.md)
+- [Tokens de design](docs/design-tokens.md)
+- [Arquitetura do sistema](docs/architecture.md)
+- [Checklist da disciplina](docs/checklist.md)
+
 ## Stack
 
 [Preenchida a partir do `docs/architecture.md` — backend, frontend, banco.]
