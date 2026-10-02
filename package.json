@@ -1,0 +1,13 @@
+{
+  "name": "utfgo",
+  "private": true,
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "api": "npm --prefix apps/api run start:dev",
+    "web": "npm --prefix apps/web run dev",
+    "test": "npm --prefix apps/api test && npm --prefix apps/web test",
+    "test:e2e": "npm --prefix apps/api run test:e2e",
+    "lint": "npm --prefix apps/api run lint && npm --prefix apps/web run lint",
+    "build": "npm --prefix apps/api run build && npm --prefix apps/web run build"
+  }
+}

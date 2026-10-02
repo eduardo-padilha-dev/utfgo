@@ -187,6 +187,28 @@ idempotentes: repetir execução não duplica saldo, penalidade ou transição.
 Cada app tem dependências e lock próprios. Não há npm workspaces, Nx ou
 Turborepo enquanto não existir código compartilhado que justifique isso.
 
+### 5.1. Scripts da raiz
+
+O package.json da raiz é privado, exige Node.js 24 e orquestra os apps sem
+workspaces. Cada app continua com instalação e lock próprios.
+
+| Script | Comando exato |
+| :-- | :-- |
+| api | npm --prefix apps/api run start:dev |
+| web | npm --prefix apps/web run dev |
+| test | npm --prefix apps/api test && npm --prefix apps/web test |
+| test:e2e | npm --prefix apps/api run test:e2e |
+| lint | npm --prefix apps/api run lint && npm --prefix apps/web run lint |
+| build | npm --prefix apps/api run build && npm --prefix apps/web run build |
+
+O scaffold mantém as ferramentas auxiliares dos geradores oficiais: reflect-metadata,
+rxjs, schematics e tipos TypeScript; Prettier, source-map-support e
+vite-tsconfig-paths na API; typescript-eslint, @eslint/js, globals e os plugins
+React no web. O ambiente DOM dos testes web é jsdom, com jest-dom para assertions.
+A ferramenta de deploy @nestjs/mau e o script nest deploy são removidos: o
+provedor aprovado é Render. Bibliotecas de negócio e integrações serão adicionadas
+nas respectivas stories, conforme a seção 2.2.
+
 ---
 
 ## ⚛️ 6. Arquitetura Frontend
